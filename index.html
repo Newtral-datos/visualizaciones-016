@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visualizaciones: fútbol y llamadas al 016</title>
+<style>
+  :root { --verde: #01f3b3; --gris-cl: #d9d8d3; --tinta: #1a1a19; --tinta2: #52514e; --fondo: #ffffff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fondo); color: var(--tinta);
+         font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 48px; }
+  h1 { font-size: clamp(24px, 5vw, 34px); line-height: 1.15; margin: 0 0 8px; }
+  p.intro { color: var(--tinta2); margin: 0 0 24px; line-height: 1.45; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li a { display: block; padding: 14px 16px; margin-bottom: 10px; border: 1px solid var(--gris-cl); border-left: 5px solid var(--verde);
+         border-radius: 4px; color: inherit; text-decoration: none; }
+  li a:hover, li a:focus-visible { background: #f6fffc; outline: none; }
+  li b { display: block; font-size: 17px; margin-bottom: 2px; }
+  li span { color: var(--tinta2); font-size: 14px; line-height: 1.4; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fútbol y llamadas al 016</h1>
+  <p class="intro">Visualizaciones interactivas del análisis de las llamadas al 016 y los partidos de fútbol, 2010-2026.</p>
+  <ul>
+    <li><a href="efecto-mundial.html"><b>Efecto del mundial</b><span>Cambio en las llamadas tras los partidos de España en mundiales y Eurocopas, según con qué se compare.</span></a></li>
+    <li><a href="partido-a-partido.html"><b>Partido a partido</b><span>Aumento o descenso de las llamadas tras cada partido de España, por resultado.</span></a></li>
+    <li><a href="evolucion-diaria.html"><b>Evolución diaria</b><span>Llamadas de cada día y media de 28 días, con los torneos y el confinamiento sombreados.</span></a></li>
+    <li><a href="evolucion-25n.html"><b>Evolución y 25N</b><span>La misma serie diaria, con el 25 de noviembre marcado cada año.</span></a></li>
+    <li><a href="dia-y-hora.html"><b>Día y hora</b><span>Mapa de calor de las llamadas por día de la semana y hora.</span></a></li>
+    <li><a href="llamadas-por-mes.html"><b>Llamadas por mes</b><span>Cuánto varían las llamadas de cada mes frente a un mes medio.</span></a></li>
+    <li><a href="competicion-ronda.html"><b>Competición y ronda</b><span>Efecto de los partidos de clubes en las llamadas, por competición y fase.</span></a></li>
+  </ul>
+</main>
+</body>
+</html>
