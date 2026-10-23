@@ -537,5 +537,30 @@ function dibujar() {
 dibujar();
 addEventListener("resize", () => { if ((innerWidth < 640) !== MOVIL) dibujar(); });
 </script>
+<script>
+/* Altura dinámica para iframe: mide el contenido y avisa a la página padre (WordPress) */
+(() => {
+  if (window.parent === window) return;
+  let ultima = 0, tarea = null;
+  const medir = () => {
+    const b = document.body, cs = getComputedStyle(b);
+    return Math.ceil(b.getBoundingClientRect().height + parseFloat(cs.marginTop) + parseFloat(cs.marginBottom));
+  };
+  const enviar = () => {
+    tarea = null;
+    const h = medir();
+    if (Math.abs(h - ultima) < 2) return;
+    ultima = h;
+    parent.postMessage({ tipo: "newtral-iframe-altura", altura: h, url: location.href }, "*");
+  };
+  const programar = () => { if (!tarea) tarea = requestAnimationFrame(enviar); };
+  addEventListener("load", programar);
+  addEventListener("resize", programar);
+  addEventListener("message", e => { if (e.data && e.data.tipo === "newtral-iframe-pedir-altura") { ultima = 0; programar(); } });
+  new ResizeObserver(programar).observe(document.body);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(programar);
+  programar();
+})();
+</script>
 </body>
 </html>
